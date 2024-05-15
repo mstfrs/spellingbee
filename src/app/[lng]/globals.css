@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.hexagon {
+  width: 70px;
+  height: 40px;
+  background-color: #94ddf3;
+  position: relative;
+  margin: 5px; 
+  cursor: pointer;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+}
+
+.hexagon:before {
+  top: -22px;
+  border-bottom: 22px solid #94ddf3;
+}
+
+.hexagon:after {
+  bottom: -22px;
+  left: 0;
+  border-top: 22px solid #94ddf3;
+}
+
+
+#middleLetter:before,
+#middleLetter:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+}
+
+#middleLetter:before {
+  top: -22px;
+  border-bottom: 22px solid #f5cb10 ;
+}
+
+#middleLetter:after {
+  bottom: -22px;
+  left: 0;
+  border-top: 22px solid #f5cb10 ;
+}
+
+#middleLetter{
+  background-color: #f5cb10;
+  border-color: #f5cb10 ;
+  width: 70px;
+  height: 40px;
+ cursor: pointer;
+  position: relative;
+  margin: 5px; 
+}
+
+
+@media (min-width: 768px) {
+  .hexagon {
+    width: 100px; /* veya istediğiniz bir değer */
+    height: 60px; /* veya istediğiniz bir değer */
+  }
+
+  .hexagon:before,
+.hexagon:after {
+  
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+}
+.hexagon:before {
+  top: -28px;
+  border-bottom: 28px solid #94ddf3;
+}
+
+.hexagon:after {
+  bottom: -28px;
+  left: 0;
+  border-top: 28px solid #94ddf3;
+}
+
+#middleLetter{
+ 
+  width: 100px;
+  height: 60px;
+
+}
+
+#middleLetter:before,
+#middleLetter:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+}
+
+#middleLetter:before {
+  top: -28px;
+  border-bottom: 28px solid #f5cb10 ;
+}
+
+#middleLetter:after {
+  bottom: -28px;
+  left: 0;
+  border-top: 28px solid #f5cb10 ;
+}
+}

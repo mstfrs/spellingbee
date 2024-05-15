@@ -1,0 +1,15 @@
+{
+    "yourWords": "Your Words",
+    "yourScore": "Your Score",
+    "yourTime": "Your Time",
+    "delete": "delete",
+    "enter": "Enter",
+    "newGame": "New Game",
+    "errors":{
+      "founded":"Already Founded!",
+      "tooShort":"Min 4 letters",
+      "missingCenter":"Missing Center Letter!",
+      "invalidWord":"Invalid Word!",
+      "timeIsUp":"Time is up!"
+    }
+  }

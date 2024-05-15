@@ -1,0 +1,15 @@
+{
+    "yourWords": "Kelimeler",
+    "yourScore": "Puan",
+    "yourTime": "Zaman",
+    "delete": "Sil",
+    "enter": "Kontrol",
+    "newGame": "Yeni Oyun",
+    "errors":{
+      "founded":"Zaten bulundu",
+      "tooShort":"En az 4 harften oluşmalı",
+      "missingCenter":"Orta harf eksik",
+      "invalidWord":"Geçersiz Kelime",
+      "timeIsUp":"Süre bitti"
+    }
+  }

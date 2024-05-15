@@ -1,0 +1,62 @@
+[
+  {
+    "answers": [
+      "lateks",
+      "maktel",
+      "altes",
+      "kamet",
+      "kaset",
+      "kesat",
+      "ketal",
+      "maket",
+      "metal",
+      "temas",
+      "alet",
+      "atel",
+      "kast",
+      "malt",
+      "mest",
+      "meta",
+      "salt",
+      "semt",
+      "tema",
+      "tela"
+     
+    ],
+    "middleLetter": "t",
+    "availableLetters": "kmseatl"
+  },
+  {
+    "answers": [
+      "alın",
+    "alnız",
+    "alçak",
+    "alçalmak",
+    "alınak",
+    "alınca",
+    
+    "anız",
+    "çakal",
+    "çakalın",
+    "çalın",
+    "çalı",
+    "çalılmak",
+    "çalım",
+    "çalıma",
+    "çalımca",
+    "çalınca",
+    "çalınmış",
+    "çalınma",
+    "çalınmaca",
+    "çalınmış",
+    "çalınmamış",
+    "çalıntı",
+    "çalıntısı",
+    "çalıntısız",
+    "çalıntıya"
+    
+    ],
+    "middleLetter": "a",
+    "availableLetters": "nzalçeı"
+  }
+]
