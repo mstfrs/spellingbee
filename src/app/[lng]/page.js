@@ -6,11 +6,7 @@ import { useEffect, useState } from "react";
 import Input from "@/components/Input";
 import { toast } from "react-toastify";
 import CountdownTimer from "@/components/Counter";
-
-import { Footer } from './components/Footer/client'
 import { useTranslation } from "../i18n/client";
-
-
 
 export default function Home({ params: { lng } }) {
   const [randomWord, setRandomWord] = useState();
@@ -19,38 +15,28 @@ export default function Home({ params: { lng } }) {
   const [foundedWords, setFoundedWords] = useState([]);
   const [score, setScore] = useState(0);
   const [count, setCount] = useState(60);
-  const [isDisabled, setIsDisabled] = useState(false)
-  const [wordGroup, setWordGroup] = useState()
-  const { t } = useTranslation(lng)
-  
-
-  
-  
- 
-  
- 
+  const [isDisabled, setIsDisabled] = useState(false);
+  const { t } = useTranslation(lng);
 
   function getRandomRecord() {
     let wordGroup;
-      
-      if (lng === 'en') {
-        wordGroup = enwords;    
-      } else if (lng === 'tr') {
-        wordGroup = trwords;     
-      }
- 
+
+    if (lng === "en") {
+      wordGroup = enwords;
+    } else if (lng === "tr") {
+      wordGroup = trwords;
+    }
+
     const dataLength = wordGroup?.length;
-    const randomIndex = Math.floor(Math.random() * dataLength);    
+    const randomIndex = Math.floor(Math.random() * dataLength);
     setRandomWord(wordGroup[randomIndex]);
     shuffleWord(randomWord);
     setTypedWord("");
-    setCount(60)
-    setScore(0)
-    setIsDisabled(false)
-    setFoundedWords([])
-    console.log(randomWord)
+    setCount(60);
+    setScore(0);
+    setIsDisabled(false);
+    setFoundedWords([]);
   }
-  
 
   async function shuffleWord(word) {
     const removedStr = word?.availableLetters.split(word.middleLetter).join("");
@@ -71,36 +57,29 @@ export default function Home({ params: { lng } }) {
   };
 
   function handleCheck(wordTocheck) {
-    console.log(wordTocheck.toLocaleLowerCase())
-    console.log(foundedWords)
     const foundWord = randomWord?.answers.find(
       (word) => word === wordTocheck.toLowerCase()
     );
-if ( foundedWords?.find((item)=>item===wordTocheck.toLowerCase())) {
-  toast.error(t('errors.founded'));
-}
-
-    else if (foundWord) {
+    if (foundedWords?.find((item) => item === wordTocheck.toLowerCase())) {
+      toast.error(t("errors.founded"));
+    } else if (foundWord) {
       setFoundedWords((prev) => [...prev, foundWord]);
       setTypedWord("");
       setScore(score + foundWord.length);
       setCount(count + 15);
     } else if (wordTocheck.length < 4) {
-      toast.error(t('errors.tooShort'));
-    } else if (
-      !wordTocheck.toLowerCase().includes(randomWord?.middleLetter)
-    ) {
-      toast.error(t('errors.missingCenter'));
-    } 
-   else {
-      toast.error(t('errors.invalidWord'));
+      toast.error(t("errors.tooShort"));
+    } else if (!wordTocheck.toLowerCase().includes(randomWord?.middleLetter)) {
+      toast.error(t("errors.missingCenter"));
+    } else {
+      toast.error(t("errors.invalidWord"));
       setTypedWord("");
     }
   }
 
   useEffect(() => {
     getRandomRecord();
-    setFoundedWords([])
+    setFoundedWords([]);
   }, []);
 
   useEffect(() => {
@@ -108,16 +87,13 @@ if ( foundedWords?.find((item)=>item===wordTocheck.toLowerCase())) {
       shuffleWord(randomWord);
     }
   }, [randomWord]);
- 
-  
 
   return (
     <div className="py-2">
-      
       <div className="grid grid-cols-1 sm:grid-cols-3 pt-5 justify-items-center sm:gap-10 ">
         <div className="order-last sm:order-first max-w-72 text-center pt-5 sm:pt-0 md:mt-0">
           <h3 className="text-sm md:text-2xl uppercase text-center px-10 border-b-4 border-yellow-500">
-            {t('yourWords')}
+            {t("yourWords")}
           </h3>
           <div className="flex flex-col justify-center items-center uppercase text-lg font-semibold pt-4">
             {foundedWords.map((word, index) => (
@@ -126,7 +102,7 @@ if ( foundedWords?.find((item)=>item===wordTocheck.toLowerCase())) {
           </div>
         </div>
         <div className="order-2 ">
-        <Input value={typedWord} />
+          <Input value={typedWord} />
           <div className="flex flex-col gap-5 md:gap-10 h-auto my-10 items-center justify-center">
             <div className="flex items-center justify-center md:gap-5 gap-2.5">
               <div
@@ -191,7 +167,7 @@ if ( foundedWords?.find((item)=>item===wordTocheck.toLowerCase())) {
         <div className="order-first sm:order-3 max-w-72 text-center flex sm:flex-col items-center justify-center sm:items-start sm:justify-start gap-10">
           <div className="flex justify-center flex-col items-center">
             <h3 className=" text-sm md:text-2xl uppercase text-center px-10 border-b-4 border-yellow-500">
-              {t('yourScore')}
+              {t("yourScore")}
             </h3>
             <h3 className="text-lg md:text-5xl mt-5 bg-blue-300 rounded-full w-14 h-14 md:w-28 md:h-28 flex items-center justify-center font-medium border-4 border-yellow-400">
               {score !== 0 && score}
@@ -199,12 +175,17 @@ if ( foundedWords?.find((item)=>item===wordTocheck.toLowerCase())) {
           </div>
           <div className="flex justify-center flex-col items-center">
             <h3 className="text-sm md:text-2xl uppercase text-center px-10 border-b-4 border-yellow-500">
-              {t('yourTime')}
+              {t("yourTime")}
             </h3>
             <h3 className="text-lg md:text-5xl mt-5 bg-blue-300 rounded-full w-14 h-14 md:w-28 md:h-28 flex items-center justify-center font-medium border-4 border-yellow-400">
-            <CountdownTimer count={count} setCount={setCount} setIsDisabled={setIsDisabled} isDisabled={isDisabled} lng={lng}  />
+              <CountdownTimer
+                count={count}
+                setCount={setCount}
+                setIsDisabled={setIsDisabled}
+                isDisabled={isDisabled}
+                lng={lng}
+              />
             </h3>
-            
           </div>
         </div>
       </div>
