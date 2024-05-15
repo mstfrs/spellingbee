@@ -92,7 +92,7 @@ export default function Home({ params: { lng } }) {
     <div className="py-2">
       <div className="grid grid-cols-1 sm:grid-cols-3 pt-5 justify-items-center sm:gap-10 ">
         <div className="order-last sm:order-first max-w-72 text-center pt-5 sm:pt-0 md:mt-0">
-          <h3 className="text-sm md:text-2xl uppercase text-center px-10 border-b-4 border-yellow-500">
+          <h3 className="text-sm md:text-2xl uppercase text-center px-10 border-b-2 border-w- border-yellow-500">
             {t("yourWords")}
           </h3>
           <div className="flex flex-col justify-center items-center uppercase text-lg font-semibold pt-4">
@@ -164,20 +164,20 @@ export default function Home({ params: { lng } }) {
             lng={lng}
           />
         </div>
-        <div className="order-first sm:order-3 max-w-72 text-center flex sm:flex-col items-center justify-center sm:items-start sm:justify-start gap-10">
+        <div className="order-first sm:order-3 max-w-72 text-center flex sm:flex-col items-center justify-center sm:items-center sm:justify-start gap-10">
           <div className="flex justify-center flex-col items-center">
-            <h3 className=" text-sm md:text-2xl uppercase text-center px-10 border-b-4 border-yellow-500">
+            <h3 className=" text-sm md:text-2xl uppercase text-center px-10 border-b-2 border-yellow-500">
               {t("yourScore")}
             </h3>
-            <h3 className="text-lg md:text-5xl mt-5 bg-blue-300 rounded-full w-14 h-14 md:w-28 md:h-28 flex items-center justify-center font-medium border-4 border-yellow-400">
+            <h3 className="text-lg md:text-5xl mt-5 bg-blue-300 rounded-full w-14 h-14 md:w-28 md:h-28 flex items-center justify-center font-medium border-2 border-yellow-300">
               {score !== 0 && score}
             </h3>
           </div>
           <div className="flex justify-center flex-col items-center">
-            <h3 className="text-sm md:text-2xl uppercase text-center px-10 border-b-4 border-yellow-500">
+            <h3 className="text-sm md:text-2xl uppercase text-center px-10 border-b-2 border-yellow-500">
               {t("yourTime")}
             </h3>
-            <h3 className="text-lg md:text-5xl mt-5 bg-blue-300 rounded-full w-14 h-14 md:w-28 md:h-28 flex items-center justify-center font-medium border-4 border-yellow-400">
+            <h3 className="text-lg md:text-5xl mt-5 bg-blue-300 rounded-full w-14 h-14 md:w-28 md:h-28 flex items-center justify-center font-medium border-2 border-yellow-300">
               <CountdownTimer
                 count={count}
                 setCount={setCount}
