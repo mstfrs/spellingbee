@@ -20,7 +20,7 @@ const CountdownTimer = ({count,setCount,setIsDisabled,isDisabled,lng}) => {
     }, 1000);
    
     return () => clearInterval(interval);
-  }, [count,setCount,setIsDisabled,isDisabled]); 
+  }, [count]); 
 
   return <div>{count}</div>;
 };
