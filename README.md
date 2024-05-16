@@ -72,7 +72,7 @@ SOLUTION
 ```
 ## Screenshot
 <p align="left">
-<a href="https://spellingbee-omega.vercel.app/"><img src="bee" alt="screenshot" target=_blanked></a>
+<a href="https://spellingbee-omega.vercel.app/"><img src="bee.gif" alt="screenshot" target=_blanked></a>
 </p>
 
 ## Links
