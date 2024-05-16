@@ -58,9 +58,9 @@ export default function Home({ params: { lng } }) {
 
   function handleCheck(wordTocheck) {
     const foundWord = randomWord?.answers.find(
-      (word) => word === wordTocheck.toLowerCase()
+      (word) => word === wordTocheck.toLocaleLowerCase()
     );
-    if (foundedWords?.find((item) => item === wordTocheck.toLowerCase())) {
+    if (foundedWords?.find((item) => item === wordTocheck.toLocaleLowerCase())) {
       toast.error(t("errors.founded"));
     } else if (foundWord) {
       setFoundedWords((prev) => [...prev, foundWord]);
@@ -69,7 +69,7 @@ export default function Home({ params: { lng } }) {
       setCount(count + 15);
     } else if (wordTocheck.length < 4) {
       toast.error(t("errors.tooShort"));
-    } else if (!wordTocheck.toLowerCase().includes(randomWord?.middleLetter)) {
+    } else if (!wordTocheck.toLocaleLowerCase().includes(randomWord?.middleLetter)) {
       toast.error(t("errors.missingCenter"));
     } else {
       toast.error(t("errors.invalidWord"));
